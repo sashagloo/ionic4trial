@@ -8,17 +8,18 @@ describe('AboutPage', () => {
   let fixture: ComponentFixture<AboutPage>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AboutPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
+      TestBed
+          .configureTestingModule({
+              declarations: [AboutPage],
+              schemas: [CUSTOM_ELEMENTS_SCHEMA],
+          })
+          .compileComponents()
+          .then(() => {
+              fixture = TestBed.createComponent(AboutPage);
+              component = fixture.componentInstance;
+              fixture.detectChanges();
+          })
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AboutPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
